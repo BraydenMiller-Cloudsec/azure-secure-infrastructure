@@ -158,35 +158,14 @@ az vm deallocate --resource-group secure-infra-rg --name secure-vm
 
 ## Screenshots
 
-### Resource Group
-![Resource Group](screenshots/resource-group.png)
-
-### Virtual Network and Subnet
-![Virtual Network](screenshots/vnet-subnet.png)
-
-### Network Security Group Rules
-![NSG Rules](screenshots/nsg-rules.png)
-
-### Virtual Machine
-![Virtual Machine](screenshots/vm-overview.png)
-
-### Key Vault
-![Key Vault](screenshots/keyvault.png)
-
-### RBAC Role Assignments
-![RBAC](screenshots/rbac-roles.png)
-
-### SSH Connection
-![SSH](screenshots/ssh-connection.png)
-
-### Secret Retrieval via Managed Identity
-![Secret Retrieval](screenshots/secret-retrieval.png)
-
-### Alert Rules
-![Alerts](screenshots/alerts.png)
-
-### Alert Email Notification
-![Alert Email](screenshots/alert-email.png)
+![Resource Group](screenshots/resource-group.jpg)
+![Virtual Network](screenshots/vnet-subnet.jpg)
+![NSG Rules](screenshots/nsg-rules.jpg)
+![Virtual Machine](screenshots/vm-overview.jpg)
+![Key Vault](screenshots/keyvault.jpg)
+![RBAC](screenshots/rbac-roles.jpg)
+![SSH](screenshots/ssh-connection.jpg)
+![Alerts](screenshots/alerts.jpg)
 
 ## Lessons Learned
 
