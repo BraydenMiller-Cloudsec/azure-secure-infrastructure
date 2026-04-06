@@ -114,7 +114,7 @@ az role assignment create --role "Key Vault Secrets User" --assignee <VM-IDENTIT
 
 ### Store a Secret
 ```bash
-az keyvault secret set --vault-name secure-kv-brayden --name "db-password" --value "SecureP@ssword123!"
+az keyvault secret set --vault-name secure-kv-brayden --name "db-password" --value "<YOUR-SECRET-VALUE>"
 ```
 
 ### Enable VM Managed Identity
