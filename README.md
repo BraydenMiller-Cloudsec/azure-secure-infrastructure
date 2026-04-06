@@ -164,7 +164,6 @@ az vm deallocate --resource-group secure-infra-rg --name secure-vm
 ![Virtual Machine](screenshots/vm-overview.jpg)
 ![Key Vault](screenshots/keyvault.jpg)
 ![RBAC](screenshots/rbac-roles.jpg)
-![SSH](screenshots/ssh-connection.jpg)
 ![Alerts](screenshots/alerts.jpg)
 
 ## Lessons Learned
