@@ -49,22 +49,22 @@ Resource Group: secure-infra-rg (East US)
 
 ## Implementation Details
 
-### Day 1 — Network Foundation
+### Step 1 — Network Foundation
 Built the core network infrastructure using Azure CLI. Created a Virtual Network with a /16 address space providing 65,000+ available IP addresses, and carved out a /24 subnet within it. Attached a Network Security Group to the subnet with default deny-all inbound rules, ensuring no traffic reaches resources unless explicitly permitted.
 
 **Key decision:** Used NSGs as a cost-effective alternative to Azure Firewall, demonstrating the same network traffic filtering principles at zero cost.
 
-### Day 2 — Virtual Machine Deployment
+### Step 2 — Virtual Machine Deployment
 Deployed an Ubuntu 22.04 LTS VM inside the private subnet using spot pricing to minimize cost. Configured SSH key pair authentication and added a custom NSG inbound rule restricting SSH access on port 22 to a single authorized IP address. Successfully connected to the VM from a local machine via SSH to verify security controls.
 
 **Key decision:** Restricted SSH access to a specific IP address rather than using Azure Bastion, implementing least privilege access at the network layer.
 
-### Day 3 — Key Vault and RBAC
+### Step 3 — Key Vault and RBAC
 Created an Azure Key Vault with RBAC authorization enabled — the modern best practice over legacy access policies. Assigned the Key Vault Administrator role to the admin user and the Key Vault Secrets User role to the VM's managed identity. Enabled a system-assigned managed identity on the VM and verified end-to-end secret retrieval from inside the VM using only the managed identity — no hardcoded credentials anywhere in the system.
 
 **Key decision:** Used managed identities instead of service principals with secrets, eliminating credential management overhead and reducing attack surface.
 
-### Day 4 — Monitoring and Alerts
+### Step 4 — Monitoring and Alerts
 Created a Log Analytics workspace as the central log collection point. Configured diagnostic settings on both the Key Vault and VM to stream logs into the workspace. Built two alert rules — one that fires on Key Vault secret access events using a custom KQL query, and one that fires on VM deallocation. Verified the pipeline end-to-end by triggering a real secret access event and receiving the email notification within 5 minutes.
 
 **Key decision:** Used log query based alerts with custom KQL rather than relying solely on built-in metrics, enabling detection of specific security-relevant events.
